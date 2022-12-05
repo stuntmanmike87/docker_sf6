@@ -1,37 +1,37 @@
 # Docker & Symfony + MySQL  
-Installation d'un environnement NginX / MySQL / PHP8 / NodeJS / Yarn / Symfony CLI avec Docker.  
-Services complémentaires : PHPMyAdmin / MailDev  
+Install a dockerized dev environnement based on: PHP8, Apache / Nginx, NodeJS & Yarn, MailDev, PHPMyAdmin / PGAdmin, MySQL / PostgreSQL, and Symfony CLI.   
+Additional services : PHPMyAdmin / PGAdmin, MailDev  
 
 ---  
 
 ## Installation  
-  1. Cloner le dépôt git :  
-  `git clone https://github.com/nicolasvauche/docker_sf.git`  
+  1. Clone this Git repository :  
+  `git clone https://github.com/stuntmanmike87/docker_sf6.git`  
 
-  2. Dupliquer le fichier .env-sample et le renommer en .env :  
+  2. Duplicate file .env-sample then rename it to .env :  
   `cd docker_sf`  
   `cp .env-sample .env`  
-  Modifier ce fichier en renseignant vos informations  
+  Change this file by typing your own settings  
 
-  3. Monter les conteneurs Docker :  
+  3. Build the Docker containers :  
   `docker-compose up -d --build`  
 
-  4. Ouvrir un autre onglet de votre terminal, et accéder à la console de votre conteneur principal :  
+  4. Open a new tab on your terminal, then get the console of your main container :  
   `docker-compose exec php /bin/bash`  
 
-  5. Tester le Symfony CLI :  
+  5. Test Symfony CLI :  
   `symfony check:requirements`  
 
 ---  
 
-## Installer un projet Symfony :  
-Toutes les commandes sont exécutées dans le terminal de votre conteneur principal :  
+## Install a Symfony project :  
+Every command is executed in your main container terminal :  
 - `php bin/console […]`  
 - `git […]`  
 - `npm […]`  
 - `yarn […]`  
 
-**Note : supprimer le fichier delete-me.txt avant d'initialiser un projet SF**  
+**Note : remove file delete-me.txt before init a SF project **  
 `rm delete-me.txt`  
 
 - Latest : `symfony new --full .`  
